@@ -13,7 +13,7 @@ class Form extends Component {
 	}
 	
 	handleChange = (event) => {
-		this.state({ [event.target.name]: event.target.value })
+		this.setState({ [event.target.name]: event.target.value })
 	}
 	
 	submitResy = (event) => {
@@ -23,7 +23,11 @@ class Form extends Component {
 			...this.state 
 		}
 		this.props.addResy(newResy)
-		
+		this.clearInputs()
+	}
+
+	clearInputs = () => {
+		this.setState({ name: '', date: '', time: '', number: ''})
 	}
 
 	render() {
@@ -38,7 +42,7 @@ class Form extends Component {
 				/>
 				<input 
 					type='text'
-					placeholder='Date'
+					placeholder='Date (mm/dd)'
 					name='date'
 					value={this.state.date}
 					onChange={event => this.handleChange(event)}
