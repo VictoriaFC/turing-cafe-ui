@@ -20,6 +20,15 @@ describe('App Dashboard', () => {
 	})
 
 	it('should see the new reservation reflect on the page after clicking submit button', () => {
-		
+		cy.get('.form-name-input').type('Victoria')
+		cy.get('.form-date-input').type('07/22')
+		cy.get('.form-time-input').type('1:00')
+		cy.get('.form-number-input').type('2')
+		cy.get('.form-submit-button').click()
+		cy.get('.resy-card').eq(9).should('be.visible')
+		cy.get('.resy-card').eq(9).contains('Victoria')
+		cy.get('.resy-card').eq(9).contains('07/22')
+		cy.get('.resy-card').eq(9).contains('1:00')
+		cy.get('.resy-card').eq(9).contains('2')
 	})
 })
