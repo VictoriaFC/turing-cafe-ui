@@ -14,8 +14,6 @@ class App extends Component {
 			.then(response => response.json())
 			.then(reservations => this.setState({ reservations }))
 	}
-
-
 	
 	render() {
     return (
