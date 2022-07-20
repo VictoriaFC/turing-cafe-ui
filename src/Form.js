@@ -32,8 +32,9 @@ class Form extends Component {
 
 	render() {
 		return(
-			<form>
+			<form className="resy-form">
 				<input 
+					className="form-name-input"
 					type='text'
 					placeholder='Name'
 					name='name'
@@ -41,6 +42,7 @@ class Form extends Component {
 					onChange={event => this.handleChange(event)}
 				/>
 				<input 
+					className="form-date-input"
 					type='text'
 					placeholder='Date (mm/dd)'
 					name='date'
@@ -49,6 +51,7 @@ class Form extends Component {
 				/>
 
 				<input 
+					className="form-time-input"
 					type='text'
 					placeholder='Time'
 					name='time'
@@ -57,13 +60,14 @@ class Form extends Component {
 				/>
 
 				<input 
+					className="form-number-input"
 					type='text'
 					placeholder='Number of Guests'
 					name='number'
 					value={this.state.number}
 					onChange={event => this.handleChange(event)}
 				/>
-				<button onClick={event => this.submitResy(event)}>Make Reservation</button>
+				<button className="form-submit-button" onClick={event => this.submitResy(event)}>Make Reservation</button>
 			</form>
 		)
 	}
