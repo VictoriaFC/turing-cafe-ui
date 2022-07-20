@@ -1,9 +1,15 @@
 import React from 'react'
 import '/Users/victoriafox-collis/turing/frontend/mod3/turing-cafe-ui/src/ResyCard.css'
 
-const ResyCard = () => {
+const ResyCard = ({name, date, time, number, id}) => {
 	return(
-		<div className='resy-card'>Resy Card</div>
+		<div className='resy-card'>
+			<h3>{name}</h3>
+			<p>{date}</p>
+			<p>{time}</p>
+			<p>{number}</p>
+			<button>cancel</button>
+		</div>
 	)
 }
 
