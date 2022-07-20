@@ -15,6 +15,16 @@ class Form extends Component {
 	handleChange = (event) => {
 		this.state({ [event.target.name]: event.target.value })
 	}
+	
+	submitResy = (event) => {
+		event.preventDefault()
+		const newResy = {
+			id: Date.now(),
+			...this.state 
+		}
+		this.props.addResy(newResy)
+		
+	}
 
 	render() {
 		return(
