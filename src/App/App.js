@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Reservations from '/Users/victoriafox-collis/turing/frontend/mod3/turing-cafe-ui/src/Reservations.js'
 
 class App extends Component {
   constructor() {
@@ -23,7 +24,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <Reservations reservations={this.state.reservations}/>
         </div>
       </div>
     )
