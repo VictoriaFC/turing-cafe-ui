@@ -3,7 +3,7 @@ import './ResyCard.css'
 
 const ResyCard = ({id, name, date, time, number, deleteResy}) => {
 	return(
-		<div className='resy-card'>
+		<div className='resy-card' id={`reservation-card-${id}`}>
 			<h3>{name}</h3>
 			<p>{date}</p>
 			<p>{time}</p>

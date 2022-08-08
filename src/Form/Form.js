@@ -34,6 +34,7 @@ class Form extends Component {
 		return(
 			<form className="resy-form">
 				<input 
+					className="input-name"
 					type= 'text'
 					name= 'name'
 					placeholder= 'Name'
@@ -41,6 +42,7 @@ class Form extends Component {
 					onChange={(event) => this.handleChange(event)}
 				/>
 				<input 
+					className="input-date"
 					type= 'text'
 					name= 'date'
 					placeholder= 'Date (i.e. mm/dd)'
@@ -48,13 +50,15 @@ class Form extends Component {
 					onChange={(event) => this.handleChange(event)}
 				/>
 				<input 
+					className="input-time"
 					type= 'text'
 					name= 'time'
 					placeholder= 'Time (i.e. 1:00pm)'
 					value={this.state.time}
 					onChange={(event) => this.handleChange(event)}
 				/>
-				<input 
+				<input
+					className="input-number"
 					type= 'text'
 					name= 'number'
 					placeholder= 'Number of Guests'
