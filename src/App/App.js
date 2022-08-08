@@ -38,6 +38,23 @@ class App extends Component {
 		.catch(error => console.log(error.message))
 	}
 
+	deleteResy = (id) => {
+		fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
+			method: 'DELETE'
+		})
+		.then(response => {
+			if(response.ok) {
+				const filterReservations = this.state.reservations.filter(reservation => reservation.id !== id)
+				this.setState({
+					reservations: filterReservations
+				})
+			} else {
+				console.log('No reservations with that name. Please try again.')
+				return this.setState({error: 'Something went wrong. Please try again.'})
+			}
+		})
+	}
+
 	render() {
 		return(
 			<div className="App">
@@ -45,7 +62,7 @@ class App extends Component {
 			<div className='resy-form'>
 				<Form addResy={this.addResy}/>
 			</div>
-			<Reservations reservations={this.state.reservations}/>
+			<Reservations reservations={this.state.reservations} deleteResy={this.deleteResy}/>
 			<div className='resy-container'>
 			</div>
 		</div>
