@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Reservations from '../Reservations/Reservations'
 
 class App extends Component {
 	constructor() {
@@ -16,13 +17,14 @@ class App extends Component {
 		.then(reservations => this.setState({reservations}))
 		.catch(error => console.log(error.message))
 	}
-	
+
 	render() {
 		return(
 			<div className="App">
 			<h1 className='app-title'>Turing Cafe Reservations</h1>
 			<div className='resy-form'>
 			</div>
+			<Reservations />
 			<div className='resy-container'>
 			</div>
 		</div>
