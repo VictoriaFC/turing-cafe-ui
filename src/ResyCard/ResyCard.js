@@ -8,7 +8,7 @@ const ResyCard = ({id, name, date, time, number}) => {
 			<p>{date}</p>
 			<p>{time}</p>
 			<p>{number}</p>
-			<button>submit</button>
+			<button>delete</button>
 		</div>
 	)
 }
