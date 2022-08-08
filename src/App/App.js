@@ -1,39 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
-import Reservations from '/Users/victoriafox-collis/turing/frontend/mod3/turing-cafe-ui/src/Reservations.js'
-import Form from '/Users/victoriafox-collis/turing/frontend/mod3/turing-cafe-ui/src/Form.js'
 
 class App extends Component {
-  constructor() {
+	constructor() {
 		super()
 		this.state = {
-			reservations: []
+			reservations: [], 
+			error: ''
 		}
 	}
 
 	componentDidMount = () => {
 		fetch('http://localhost:3001/api/v1/reservations')
-			.then(response => response.json())
-			.then(reservations => this.setState({ reservations }))
+		.then(response => response.json())
+		.then(reservations => this.setState({reservations}))
+		.catch(error => console.log(error.message))
 	}
 	
-	addResy = (newResy) => {
-		this.setState({reservations: [...this.state.reservations, newResy]})
-	}
-
 	render() {
-    return (
-      <div className="App">
-        <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-					<Form addResy={this.addResy}/>
-        </div>
-        <div className='resy-container'>
-          <Reservations reservations={this.state.reservations}/>
-        </div>
-      </div>
-    )
-  }
+		return(
+			<div className="App">
+			<h1 className='app-title'>Turing Cafe Reservations</h1>
+			<div className='resy-form'>
+			</div>
+			<div className='resy-container'>
+			</div>
+		</div>
+		)
+	}
 }
 
 export default App;
